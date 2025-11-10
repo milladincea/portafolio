@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Millaray Dinamarca C.</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Millaray Dinamarca Cea</h1>
+            <h2>Bachiller General, mención Humanidades y Artes</h2>
+        </header>
+        <main>
+            <div class="container">
+                <nav class="nav">
+                    <a href="index.html" class="active">Portafolio</a>
+                    <a href="about.html">Sobre mí</a>
+                </nav>
+                <section class="gallery">
+                    <div class="gallery-grid" id="aqui">
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>Millaray Dinamarca C. © 2025</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </footer>
+        <script>
+const trabajitos = [
+    {
+        id: 1,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/proyecto1.webp",
+        title: "Afiche Ratón",
+        course: "Proyecto I",
+    },
+    {
+        id: 2,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/proyecto12.webp",
+        title: "Reina Pop",
+        course: "Proyecto I"
+    },
+    {
+        id: 3,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/lengysign.webp",
+        title: "Pokemones",
+        course: "Lenguaje y Significación"
+    },
+    {
+        id: 4,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/confi11.webp",
+        title: "Sol de Invierno",
+        course: "Configuración Visual I"
+    },
+    {
+        id: 5,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/montaje1.webp",
+        title: "Montaje Final Proyecto I",
+        course: "Proyecto I"
+    },
+    {
+        id: 6,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/proyecto21.webp",
+        title: "Ichikohi",
+        course: "Proyecto II",
+    },
+    {
+        id: 7,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/confi2.webp",
+        title: "Ícono Breaking JJOO",
+        course: "Configuración Visual II"
+    },
+    {
+        id: 8,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/repreconc.webp",
+        title: "Cartas Alicia Oscura",
+        course: "Representación Conceptual"
+    },
+    {
+        id: 9,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/comunicaciondelproyecto.webp",
+        title: "Tu copa, su silueta",
+        course: "Comunicación del Proyecto de Diseño",
+    },
+    {
+        id: 10,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/montaje2.webp",
+        title: "Montaje Final Proyecto II",
+        course: "Proyecto II"
+    },
+    {
+        id: 11,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/proyecto3.webp",
+        title: "(Inside)",
+        course: "Proyecto III"
+    },
+    {
+        id: 12,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/pyp1.webp",
+        title: "Frumis",
+        course: "Procesos y Prototipos I"
+    },
+    {
+        id: 13,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/ergo.webp",
+        title: "Ekun: Propuesta de Señaléticas",
+        course: "Ergonomía y Factores Humanos"
+    },
+    {
+        id: 14,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/proyecto4.webp",
+        title: "Ami: Transportador de Picnic",
+        course: "Proyecto IV"
+    },
+    {
+        id: 15,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/pyp2.webp",
+        title: "Luminaria de Metal",
+        course: "Procesos y Prototipos II"
+    },
+    {
+        id: 16,
+        photo: "https://raw.githubusercontent.com/milladincea/portafolio/main/img/hhcc2.webp",
+        title: "Máscara de Conejo",
+        course: "Herramientas Computacionales",
+    }           
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const lugar = document.querySelector("#aqui");
+
+    trabajitos.forEach(t => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        
+        const a = document.createElement('a');
+        a.href = `single.html?id=${t.id}`;
+        
+        const img = document.createElement('img');
+        img.src = t.photo;
+        img.alt = t.title;
+        img.loading = 'lazy';
+        
+        const overlay = document.createElement('div');
+        overlay.className = 'gallery-overlay';
+        overlay.innerHTML = `<h3></h3><p></p>`;
+        overlay.querySelector('h3').textContent = t.title;
+        overlay.querySelector('p').textContent = t.course;
+        
+        a.append(img, overlay);
+        div.appendChild(a);
+        lugar.appendChild(div);
+    });
+});            
+        </script>
+    </body>
+
+
+</html>
